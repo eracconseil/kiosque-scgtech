@@ -89,6 +89,7 @@ section.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);g
 .actions{display:flex;flex-wrap:wrap;gap:10px}
 button,.btn{font:inherit;font-weight:600;font-size:15px;border-radius:9px;padding:10px 16px;cursor:pointer;border:1.5px solid var(--ink);background:var(--shelf);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
 button.primary,.btn.primary{background:var(--ink);color:var(--paper);box-shadow:0 6px 16px rgba(23,33,43,.15)}
+.btn.download::before{content:"↓";font-family:var(--mono);font-size:16px;line-height:1}
 button:not(:disabled):hover,.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(23,33,43,.1)}
 button:disabled{opacity:.55;cursor:default}
 button:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
@@ -209,9 +210,10 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:va
       <p class="note"><b>Option IA :</b> lecture automatique du fournisseur, du numéro, de la TVA et des montants avec AI Builder. Configuration SCGTech : +490 € HT. Licence et consommation Microsoft facturées séparément.</p>
       <div class="actions">
         <button class="primary" data-ask="Démo : Réception automatique des factures">Demander une démo</button>
+        <a class="btn download" href="downloads/Kit-SCGTech-Reception-Factures-v1.0.zip" download>Télécharger le kit ZIP</a>
         <button data-buy="reception_install">Acheter le kit installé — 1 490 € HT</button>
       </div>
-      <p class="note" id="buyNote-reception">Paiement sécurisé par Stripe. Après l'achat, nous vous contactons sous 24 h pour organiser la livraison. Les autres formules sont plus bas.</p>
+      <p class="note" id="buyNote-reception">Le ZIP (4,3 Mo) contient le flux Power Automate, le registre Excel, les guides, une facture fictive et la vidéo. Configurez les connexions Microsoft 365 avant d'activer le flux. Pour l'installation clé en main, paiement sécurisé par Stripe.</p>
     </div>
   </section>
 
