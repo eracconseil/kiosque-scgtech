@@ -206,11 +206,11 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:va
         <li>Factures fictives pour tester</li>
         <li>Vidéo de démonstration</li>
       </ul>
-      <p class="note"><b>Option IA :</b> lecture automatique du fournisseur, du numéro, de la TVA et des montants avec AI Builder. Configuration SCGTech : +490 € HT. Licence et consommation Microsoft facturées séparément.</p>
+      <p class="note"><b>Option IA :</b> lecture automatique du fournisseur, du numéro, de la TVA et des montants avec AI Builder. Configuration SCGTech : +490 €, prix final. Licence et consommation Microsoft facturées séparément.</p>
       <div class="actions">
         <button class="primary" data-ask="Démo : Réception automatique des factures">Demander une démo</button>
-        <button data-ask="Commande : Kit autonome — 490 € HT">Commander le kit — 490 € HT</button>
-        <button data-buy="reception_install">Acheter le kit installé — 1 490 € HT</button>
+        <button data-buy="reception_kit">Commander le kit — 490 €</button>
+        <button data-buy="reception_install">Acheter le kit installé — 1 490 €</button>
       </div>
       <p class="note" id="buyNote-reception">Le kit autonome est livré après validation de la commande et du paiement. Pour l'installation clé en main, paiement sécurisé par Stripe.</p>
     </div>
@@ -233,15 +233,15 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:va
   </section>
 
   <section id="formules" aria-labelledby="offTitle" style="display:flex;flex-direction:column;gap:18px">
-    <div><p class="eyebrow">Formules</p><h2 id="offTitle" style="font-size:30px">Trois façons d'utiliser un kit</h2><p class="note">Prix du kit « Réception automatique des factures », hors TVA (17 % en sus).</p></div>
+    <div><p class="eyebrow">Formules</p><h2 id="offTitle" style="font-size:30px">Trois façons d'utiliser un kit</h2><p class="note">Prix finaux facturés par SCGTech. TVA non facturée.</p></div>
     <div class="offers">
-      <div class="offer"><h3>Kit autonome</h3><p class="price">490 € HT · paiement unique</p><ul><li>Fichiers et flux à importer</li><li>Guide et vidéo d'installation</li><li>Pour les équipes disposant d'un référent informatique</li></ul><button data-ask="Commande : Kit autonome — 490 € HT" style="margin-top:auto">Demander le kit — 490 €</button></div>
-      <div class="offer mid"><span class="badge b-demo" style="align-self:flex-start">Recommandé</span><h3>Installation clé en main</h3><p class="price">1 490 € HT · paiement unique</p><ul><li>Installation dans votre Microsoft 365, avec vous</li><li>Réglage sur vos propres documents et vos textes</li><li>Prise en main de l'équipe et test sur de vrais cas</li></ul><button data-buy="reception_install" style="margin-top:auto">Acheter — 1 490 €</button></div>
-      <div class="offer"><h3>Service suivi</h3><p class="price">1 490 € HT + 149 € HT/mois</p><ul><li>Installation clé en main incluse</li><li>Surveillance et corrections du flux</li><li>Support par e-mail</li><li>Jusqu'à 30 minutes de petite évolution par mois</li><li>Engagement initial de 12 mois</li></ul><button data-ask="Abonnement : Service suivi — 149 € HT/mois" style="margin-top:auto">Demander le service — 149 €/mois</button></div>
+      <div class="offer"><h3>Kit autonome</h3><p class="price">490 € · paiement unique</p><ul><li>Fichiers et flux à importer</li><li>Guide et vidéo d'installation</li><li>Pour les équipes disposant d'un référent informatique</li></ul><button data-buy="reception_kit" style="margin-top:auto">Acheter le kit — 490 €</button></div>
+      <div class="offer mid"><span class="badge b-demo" style="align-self:flex-start">Recommandé</span><h3>Installation clé en main</h3><p class="price">1 490 € · paiement unique</p><ul><li>Installation dans votre Microsoft 365, avec vous</li><li>Réglage sur vos propres documents et vos textes</li><li>Prise en main de l'équipe et test sur de vrais cas</li></ul><button data-buy="reception_install" style="margin-top:auto">Acheter — 1 490 €</button></div>
+      <div class="offer"><h3>Service suivi</h3><p class="price">1 490 € + 149 €/mois</p><ul><li>Installation clé en main incluse</li><li>Surveillance et corrections du flux</li><li>Support par e-mail</li><li>Jusqu'à 30 minutes de petite évolution par mois</li><li>Engagement initial de 12 mois</li></ul><button data-ask="Abonnement : Service suivi — 149 €/mois" style="margin-top:auto">Demander le service — 149 €/mois</button></div>
     </div>
     <div class="ai-option">
       <div><span class="badge b-ia">Option IA</span><h3>Extraction automatique des données de facture</h3><p>Fournisseur, numéro, date, TVA et montants lus automatiquement. Configuration et validation sur vos factures, puis contrôle humain possible dans le registre.</p></div>
-      <div class="ai-price">+490 € HT<small>paiement unique</small></div>
+      <div class="ai-price">+490 €<small>prix final · paiement unique</small></div>
     </div>
     <div class="commercial-note">Les licences Microsoft 365, Power Automate Premium et les crédits ou consommations IA ne sont pas inclus dans les prix SCGTech. À titre indicatif, Microsoft affiche Power Automate Premium autour de 13 € HT par utilisateur et l'analyse d'une facture autour de 0,08 $ par page. Le montant exact dépend du contrat Microsoft du client.</div>
     <div class="why">
@@ -283,10 +283,12 @@ footer{border-top:1px solid var(--rule);padding-top:20px;font-size:13px;color:va
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script>
-/* Liens de paiement : remplir quand chaque kit est en vente (Lemon Squeezy, Paddle, Gumroad…). Vide = vente pas encore ouverte. */
+/* Liens commerciaux publics. */
 const PAYMENT_LINKS = {
-  reception_install: "https://buy.stripe.com/aFa5kC8rC3JQcZ0gJa0VO06",  // Installé chez vous — 1 490 € HT
+  reception_kit: "https://buy.stripe.com/6oU3cucHS6W2gbc3Wo0VO08", // Kit autonome — 490 €
+  reception_install: "https://buy.stripe.com/aFa5kC8rC3JQcZ0gJa0VO06", // Installé chez vous — 1 490 €
 };
+const BOOKING_LINK = "https://bookings.cloud.microsoft/bookwithme/user/77e0fa7a60574d738467f8d81fb48a48@scgtechai.onmicrosoft.com/meetingtype/VMoATtaImEmux7f9Dcb9Jg2?anonymous&ismsaljsauthenabled";
 
 const SEGMENTS = {fid:"Fiduciaires", fo:"Family office & corporate", int:"Questions internes", pme:"PME finance & admin"};
 const KITS = [
@@ -363,7 +365,11 @@ document.addEventListener("click",e=>{
   const f=e.target.closest("[data-f]");
   if(f){filter=f.dataset.f;try{localStorage.setItem("kiosque-filter",filter)}catch(err){}renderFilters();renderGrid();return;}
   const a=e.target.closest("[data-ask]");
-  if(a){copy("info@scgtech-ai.lu",`Adresse copiée. Écrivez à info@scgtech-ai.lu avec l'objet « ${a.dataset.ask} ».`);return;}
+  if(a){
+    if(a.dataset.ask.startsWith("Démo :")){window.open(BOOKING_LINK,"_blank","noopener");}
+    else {copy("info@scgtech-ai.lu",`Adresse copiée. Écrivez à info@scgtech-ai.lu avec l'objet « ${a.dataset.ask} ».`);}
+    return;
+  }
   const b=e.target.closest("[data-buy]");
   if(b){const url=PAYMENT_LINKS[b.dataset.buy]; if(url){window.open(url,"_blank","noopener");} else {toast("La vente en ligne ouvre bientôt. Demandez une démo en attendant.");}}
 });
